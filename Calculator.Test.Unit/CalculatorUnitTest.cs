@@ -21,7 +21,6 @@ namespace Calculator.Test.Unit
         [TestCase(-1, 3, 2)]
         [TestCase(3, -1, 2)]
         [TestCase(1, 1, 2)]
-        [TestCase(1, 3, 4)]
         public void Add_AddPosAndNegNumbers_ResultIsCorrect(double a, double b, double result)
         {
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
@@ -59,10 +58,17 @@ namespace Calculator.Test.Unit
         [TestCase(-1, 2, -0.5)]
         [TestCase(2, -1, -2)]
         [TestCase(-5, -5, 1)]
-        public void Divide_DividePosAndNegNumbers_ResultIsCorrect(double a, double b, double result)
+        public void Divide_DividePosAndNegNumbers_ResultIsCorrect(double dividend, double divisor, double result)
         {
-            Assert.That(_uut.Divide(a, b), Is.EqualTo((result)));
+            Assert.That(_uut.Divide(dividend, divisor), Is.EqualTo((result)));
         }
+
+        // ****************************** DivideByZeroException() ******************************
+        public void DivideByZeroException()
+        {
+            Assert.That(() => _uut.Divide(dividend: 5, divisor: 0), Throws.TypeOf<DivideByZeroException>());
+        }
+
 
         // ****************************** Power() ******************************
         [TestCase(0, 2, 0)]

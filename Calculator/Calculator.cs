@@ -23,13 +23,13 @@ namespace Calculator
             return a * b;
         }
 
-        public double Divide(double a, double b)
+        public double Divide(double dividend, double divisor)
         {
-            if (b == 0)
+            if (divisor == 0)
             {
                 throw new DivideByZeroException();
             }
-            return a / b;
+            return dividend / divisor;
         }
 
         public double Power(double a, double exp)
