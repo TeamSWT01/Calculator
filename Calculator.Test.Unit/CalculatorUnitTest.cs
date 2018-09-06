@@ -57,7 +57,6 @@ namespace Calculator.Test.Unit
         [TestCase(-1, 2, -0.5)]
         [TestCase(2, -1, -2)]
         [TestCase(-5, -5, 1)]
-        [TestCase(3, 2, 1)]
         public void Divide_DividePosAndNegNumbers_ResultIsCorrect(double a, double b, double result)
         {
             Assert.That(_uut.Divide(a, b), Is.EqualTo((result)));
