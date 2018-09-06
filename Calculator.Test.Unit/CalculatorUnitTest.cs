@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace Calculator.Test.Unit
 {
@@ -80,6 +81,13 @@ namespace Calculator.Test.Unit
         public void Power_PowerPosAndNegNumbers_ResultIsCorrect(double a, double exp, double result)
         {
             Assert.That(_uut.Power(a, exp), Is.EqualTo(result));
+        }
+
+        // ****************************** Clear() ******************************
+        [Test]
+        public void Clear_SetAccumulatorToZero()
+        {
+            
         }
     }
 }
