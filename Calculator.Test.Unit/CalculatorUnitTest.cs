@@ -49,6 +49,19 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
 
+        // ****************************** Divide() ******************************
+        [TestCase(10, 10, 1)]
+        [TestCase(0, 5, 0)]
+        [TestCase(4, 2, 2)]
+        [TestCase(2, 4, 0.5)]
+        [TestCase(-1, 2, -0.5)]
+        [TestCase(2, -1, -2)]
+        [TestCase(-5, -5, 1)]
+        public void Divide_DividePosAndNegNumbers_ResultIsCorrect(double a, double b, double result)
+        {
+            Assert.That(_uut.Divide(a, b), Is.EqualTo((result)));
+        }
+
         // ****************************** Power() ******************************
         [TestCase(0, 2, 0)]
         [TestCase(2, 0, 1)]
